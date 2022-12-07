@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>
+            LIST GOES HERE 
+        </title>
+    <style>
+        #todolist
+        {
+            margin-left: 300px;
+            margin-right:300px;
+            margin-top:40px;
+            height: auto;
+            width: 700px;
+            border: 10px solid black;
+            background-color: beige;
+            font-family:fantasy;
+            ;
+        }
+        #add
+        {
+            padding: 50px;
+            margin-left: 530px;
+            font-size: 136px;
+            background-color: rgba(128, 128, 128, 0.839);
+            border-radius: 200px;
+            ;
+        }
+        a{
+            color: rgb(228, 224, 16);
+            font-style:bold;
+            font-size: large;
+            background-color: black;
+            padding: 2px;
+        }
+        body
+        {
+            background-color: rgba(245, 212, 212, 0.947);
+        }
+        h1{
+            background-color: goldenrod;
+        }
+        #navbar
+        {
+            margin-left:300px;
+            margin-right:330px;
+            background-color: goldenrod;
+            
+            padding:10px;
+        }
+    </style>
+    </head>
+    <body>
+        <div id="navbar">
+         <pre >  <a href="/">ACTIVE ITEMS LIST</a>         <a href="/add">ADD ITEMS</a>       <a href="completed"> COMPLETED TASKS</a>        <a href="/admin"> ADMINISTRATOR </a></a></pre>
+        </div>
+        <h1 align=center>TODO ITEMS</h1>
+        <div id="todolist">  
+        {% for i in mydata %}
+        <div><h3>{{i.title}}</h3><h5>{{i.desc}}</h5><h6>created time: {{i.time}} created date: {{i.date}}</h6></div>
+        
+        <a href="{% url 'delete' i.id %}">MARK COMPLETED</a>
+        <hr>
+        
+         {% endfor %}</div>
+        
+    </body>
+</html>

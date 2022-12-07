@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>
+            TODO
+        </title>
+        <style>
+        a{
+            color: rgb(228, 224, 16);
+            font-style:bold;
+            font-size: large;
+            background-color: black;
+            padding: 2px;
+        }
+        
+        #navbar
+        {
+            margin-left:300px;
+            margin-right:340px;
+            background-color: goldenrod;
+            
+            padding:10px;
+        }
+        body
+        {
+            background-color: rgba(157, 179, 185, 0.947);
+        }
+        #form
+        {   
+            background-color:rgb(49, 19, 39);
+            position:absolute;
+            margin-top:60px;
+            margin-left: 300px;
+            height:550px;
+            color:white;
+            font-family: cursive;
+        
+        }
+        #submit
+        {
+            background-color:goldenrod ;
+            font-family: fantasy;
+        }
+        #main
+        {
+            background-color: rgb(31, 30, 28);
+            color:azure;
+            font-family: fantasy;
+            font-size: 34px;
+        }
+        </style>
+    </head>
+    <body>
+       <h1 id="main" align="center" > CREATE A TODO LIST TO REMIND YOU OF TODAY's TASKS</h1>
+       <div id="navbar">
+        <pre >  <a href="/">ACTIVE ITEMS LIST</a>         <a href="/add">ADD ITEMS</a>       <a href="completed"> COMPLETED TASKS</a>        <a href="/admin"> ADMINISTRATOR </a></a></pre>
+       </div>
+       <form  id="form"  method="post" >
+        {% csrf_token %}
+        <label for="title"> Enter title</label>
+        <textarea name="TITLE" required="True" rows="2" cols="84"></textarea><br><br><br><br>
+        <label for="description"> Describe </label>
+        <textarea name="description" rows="6" cols="85" required="True"></textarea><br><br>
+        <button type="submit" id="submit" align="center">ADD</button>
+       </form >
+       
+       
+       
+    </body>
+</html>

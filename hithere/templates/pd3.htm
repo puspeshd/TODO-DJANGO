@@ -1,0 +1,71 @@
+<html><head><title>COMPLETED ITEMS
+
+</title>
+<style>
+    a{
+            color: rgb(228, 224, 16);
+            font-style:bold;
+            font-size: large;
+            background-color: black;
+            padding: 2px;
+        }
+        body
+        {
+            background-color: rgba(92, 22, 22, 0.947);
+        }
+        h1{
+            background-color: goldenrod;
+        }
+        #navbar
+        {
+            margin-left:300px;
+            margin-right:330px;
+            background-color: goldenrod;
+            
+            padding:10px;
+        }
+    #completeditems
+        {
+            margin-left: 300px;
+            margin-right:300px;
+            margin-top:40px;
+            height: auto;
+            width: 700px;
+            border: 10px solid black;
+            background-color: beige;
+            font-family:fantasy;
+            text-decoration: line-through;
+            color:blueviolet
+        }
+    #complink
+    {
+        margin-left:540px;
+            margin-right:330px;
+            
+            
+            
+    }    
+        
+</style>
+</head>
+<body>
+    
+    <div id="navbar">
+        <pre >  <a href="/">ACTIVE ITEMS LIST</a>         <a href="/add">ADD ITEMS</a>       <a href="completed"> COMPLETED TASKS</a>        <a href="/admin"> ADMINISTRATOR </a></a></pre>
+       </div>
+       <h1 align=center >COMPLETED TASKS </h1>          
+        
+       <a href="/deleteallcomp" id="complink">CLEAR ALL COMPLETED TASKS</a>
+    
+<div id="completeditems">
+    {%for i in item%}
+    <div>
+        {{i.title}}<br>{{i.desc}}<br>completed time: {{i.time}} completed date: {{i.date}}<hr>
+    </div>
+    {%endfor %}
+</div>
+
+    
+
+</body>
+</html>
